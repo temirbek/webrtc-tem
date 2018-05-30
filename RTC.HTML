@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head><title>WebRTC - первое знакомство</title>
+  <style>
+     video { height: 240px; width: 320px; border: 1px solid grey; }
+  </style>
+</head>
+<body>
+  <button id="btn_getUserMedia" onclick="getUserMedia_click()">getUserMedia</button>
+  <br>
+  <video id="localVideo1" autoplay="true"></video>
+  <script>
+     var localStream = null;
+	 var streamConstraints = { "audio": true, "video": true };
+	 var OfferConstraints = {};
+	function getUserMedia_success(stream) {
+         console.log("getUserMedia_success():", stream);
+         localVideo1.src = URL.createObjectURL(stream); // Подключаем медиапоток к HTML-элементу <video>
+         localStream = stream;
+	}
+    function getUserMedia_error(error) {
+         console.log("getUserMedia_error():", error);
+    }
+    function getUserMedia_click() {
+         console.log("getUserMedia_click()");
+          navigator.webkitGetUserMedia(
+           streamConstraints,
+          getUserMedia_success,
+          getUserMedia_error
+      );		
+    }
+  </script>
+ </body>
+</html>	 

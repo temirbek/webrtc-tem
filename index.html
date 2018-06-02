@@ -122,6 +122,13 @@ function pc1_onaddstream(event) {
     remoteVideo1.src = ""; pc1.close(); pc1 = null;
     remoteVideo2.src = ""; pc2.close(); pc2 = null; 
     }
+	 var mediaStreamConstraints = {
+     audio: false, 
+     video: {
+      mandatory: { chromeMediaSource: 'screen'  },
+      optional: []
+    }
+     };
   </script>
   <button id="btnHangup" onclick="btnHangupClick()">Hang Up</button>
   <a href="http://googl.com">темир</a>!

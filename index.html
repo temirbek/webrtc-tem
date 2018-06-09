@@ -16,9 +16,10 @@
   <br>
   <video id="remoteVideo2" autoplay=true></video>
   <video id="remoteVideo1" autoplay=true></video>
+  <div id="chat">
   <script type="text/javascript">
      var servers = { "iceServers": [
-       { "url": "stun:stun.stunprotocol.org:3478" },
+      { "url": "stun:stun.stunprotocol.org:3478" },
       { "url": "turn:user@host:port", "credential": "password" }
      ]}; 
      var pc1;
@@ -130,6 +131,8 @@ function pc1_onaddstream(event) {
     }
      };
   </script>
+  
+  <a href=">
   <button id="btnHangup" onclick="btnHangupClick()">Hang Up</button>
   <a href="http://googl.com">темир</a>!
   <input value="стандартное значений!"/><br>
